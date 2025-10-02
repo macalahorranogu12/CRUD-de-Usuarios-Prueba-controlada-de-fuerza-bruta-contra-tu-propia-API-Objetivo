@@ -69,3 +69,9 @@ def login(payload: dict):
                 raise HTTPException(403, "Cuenta inactiva")
             return {"message": f"Bienvenido {u['username']}"}
     raise HTTPException(401, "Usuario o contraseña incorrectos")
+
+@app.get("/debug/dump_users")
+def debug_dump_users():
+    return USERS
+
+
